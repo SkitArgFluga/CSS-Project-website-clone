@@ -7,4 +7,8 @@
     .mobile-navbar{
         display: none;
     }
+
+        .container{
+        display: flex;
+    }
 }

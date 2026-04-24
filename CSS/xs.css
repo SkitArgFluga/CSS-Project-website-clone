@@ -1,9 +1,29 @@
 *{margin: 0;}
 
+/*
 body{
     font-family: Verdana, sans-serif;
     color: rgb(223, 223, 223);
     background-color: rgb(32, 30, 34);
+    margin-right: 5%;
+    margin-left: 5%;
+    max-width: 75vw;
+    box-sizing: border-box;
+}
+*/
+
+html,body{
+  width:100%;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  width:90%;        
+  margin:0 auto;   
+  font-family: Verdana, sans-serif;
+  color:#dfdfdf;
+  background:#201e22;
 }
 
 .flex.grid{
@@ -17,6 +37,13 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+.header-spacer {
+  flex: 1 1 0;             /* grows to take remaining space */
+  min-width: 32px;         /* minimum gap between left and search */
+  max-width: 480px;        /* optional cap so search doesn't go too far */  
+}
+
 
 .logo{
     font-size: 1.5rem;
@@ -52,84 +79,156 @@ body{
   font-size:16px;
   vertical-align:middle;
 }
+/* DEBUG HELP */
+/*
+.container{ outline:1px dashed lime; }
+.left{ outline:1px solid red; }
+.search{ outline:1px solid blue; }
+.right{ outline:1px solid orange; }
+*/
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  justify-content:space-between;
+}
+
+.pill {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 6px 10px;
+  height: 120%;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 14px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, black 85%, transparent);
+}
+
+.left .item {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #d6d6d6;
+  opacity: 0.9;
+}
+
+.search {
+  flex: 0 0 260px; /* important */
+  justify-content: center;
+}
+
+.search-pill-obj {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: #d6d6d6;
+}
+
+.right {
+  flex: 0 0 auto;
+}
+
+.balance {
+  font-size: 13px;
+  color: #d6d6d6;
+}
+
+.page{
+  width:95%; 
+  max-width:75vw; 
+  margin:0 auto; 
+  box-sizing:border-box;
+}
+
+.left {
+  mask-image: linear-gradient(to right, black 85%, transparent);
+}
+
+.material-symbols-outlined{ font-size:16px; vertical-align:middle; }
+
+.card {
+  width: 250px;
+  height: 400px;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  display:flex;
+}
+/*
+.card img { 
+  width: 100%;
+  height: 100%;
+  display:table-row;
+  object-fit: cover;
+}
+.card p{
+  display:table-row;
+  height:1px;
+}
+*/
+
+/* TOG HJÄLP AV W3Schools portfolio projekt här; https://www.w3schools.am/howto/howto_css_portfolio_gallery.html#gsc.tab=0*/
+.row {
+  margin: 8px -16px;
+}
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  float: left;
+  width: 17.5%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  background-color: rgb(54, 54, 54);
+  padding: 0px;
+}
+
+.content .title{
+  color: white;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .description{
+  color: yellow;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .genre{
+  color:darkgray;
+  font-size: small;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .price-tag{
+  color: #d6d6d6;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 
-    /* ANVÄNDE AI HÄR */
-    /* Outer header area */
-    .nav-row{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between; /* big gap between left and right */
-      gap:16px;
-      background: rgba(255,255,255,0.03);
-      padding:8px 12px;
-      border-radius:12px;
-    }
 
-    /* Left group: inline menu items */
-    .nav-left{
-      display:inline-flex;
-      gap:14px;
-      align-items:center;
-      overflow:hidden;
-      flex:0 1 auto;
-    }
-    .nav-left .item{
-      white-space:nowrap;
-      font-size:13px;
-      display:inline-flex;
-      gap:6px;
-      align-items:center;
-      color:#d6d6d6;
-    }
-
-    /* Middle: search container (separate block) */
-    .nav-search{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex:0 0 auto;       /* fixed natural width so there's a visible gap */
-      min-width:260px;     /* adjust to increase/decrease gap */
-    }
-    .search-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      width:100%;
-      max-width:420px;
-      padding:6px 12px;
-      background: rgba(0,0,0,0.12); /* darker inner field */
-      border-radius:8px;
-      color:#d6d6d6;
-      font-size:13px;
-    }
-
-    /* Thin divider to the left of the search (subtle like reference) */
-    .nav-search::before{
-      content:"";
-      display:inline-block;
-      width:1px;
-      height:22px;
-      margin-right:12px;
-      margin-left:6px;
-      background: rgba(255,255,255,0.04);
-      vertical-align:middle;
-    }
-
-    /* Right: balance box */
-    .nav-right{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      flex:0 0 auto;
-    }
-    .nav-right .balance{
-      padding:6px 10px;
-      background: rgba(255,255,255,0.02);
-      border-radius:8px;
-      font-size:13px;
-      color:#d6d6d6;
-    }
-
-    .material-symbols-outlined{ font-size:16px; vertical-align:middle; }
